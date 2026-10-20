@@ -91,7 +91,7 @@ def list_books():
 def search_books(text):
     conn = get_connection()
     cur = conn.cursor()
-        cur.execute(
+    cur.execute(
         "SELECT id, title, author FROM books WHERE title LIKE ?",
         ("%" + text + "%",),
     )
